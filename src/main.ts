@@ -38,70 +38,46 @@ function findElements() {
     cases: HTMLElement | null = null,
     refresh: HTMLElement | null = null;
 
-  const results = {
-    sidebar,
-    cases,
-    refresh,
-  };
-
   const element = document.querySelector("[app-id]");
   if (!element) {
     console.warn("Could not find app element");
-    return results;
+    return { sidebar, cases, refresh };
   }
 
   const eleStack: Element[] = [element];
   while (eleStack.length) {
     const ele = eleStack.pop();
     if (ele == undefined) continue;
-    console.log("looping...");
 
     try {
-      console.log("Trying...");
-      console.log(ele, { sidebar, cases, refresh });
-
-      if (!sidebar) {
-        console.log("Searching for sidebar...");
-        sidebar = ele.querySelector("sn-canvas-toolbar");
-      }
-      if (!cases) {
-        console.log("Searching for cases...");
-        cases = ele.querySelector("tbody");
-      }
+      if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
+      if (!cases) cases = ele.querySelector("tbody");
       if (!refresh) {
-        console.log("Searching for refresh...");
         const check = ele.querySelector(
           "sn-record-list-declarative-actions-wrapper",
         )?.shadowRoot?.childNodes[0];
 
-        console.log("Check Refresh", { check });
-        console.log(check instanceof HTMLElement);
-        if (!(check instanceof HTMLElement)) continue;
+        if (!(check instanceof HTMLElement)) 
+          throw new TypeError("Not HTMLElement");
 
         refresh = check?.shadowRoot?.childNodes[0].childNodes[0]
           .childNodes[0].childNodes[0] as HTMLElement;
       }
 
-      console.log("Done Trying");
     } catch (e) {
-      console.log("Error caught...");
       if (!(e instanceof TypeError)) console.warn(e);
     }
 
-    console.log("Check Check", { sidebar, cases, refresh });
     if (!sidebar || !cases || !refresh) {
-      console.log("Continuing search...");
       ele?.shadowRoot?.childNodes.forEach((e) => {
-        console.log(e);
         if (e instanceof HTMLElement) eleStack.push(e);
       });
       ele?.childNodes.forEach((e) => {
-        console.log(e);
         if (e instanceof HTMLElement) eleStack.push(e);
       });
     } else break;
   }
-  return results;
+  return { sidebar, cases, refresh };
 }
 
 function loop(
