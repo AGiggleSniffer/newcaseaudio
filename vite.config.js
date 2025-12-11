@@ -22,14 +22,17 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
         {
-            // A custom plugin named 'userscript-metadata-plugin'
             name: "userscript-metadata-plugin",
-
-            // Use the 'renderChunk' hook provided by Rollup/Vite
-            renderChunk(code, chunk, options) {
-                console.log(`[Vite Plugin] Applying metadata to chunk: ${chunk.name}`);
-                // Prepend the metadata block to the generated JavaScript code
-                return userscriptMetadata + "\n" + code;
+            // Use the generateBundle hook
+            generateBundle(options, bundle) {
+                for (const fileName in bundle) {
+                    const file = bundle[fileName];
+                    // Ensure we are only modifying the code file, not an asset like a source map
+                    if (file.type === "chunk") {
+                        // Prepend the metadata to the code content
+                        file.code = userscriptMetadata + "\n" + file.code;
+                    }
+                }
             },
         },
     ],
