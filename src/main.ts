@@ -4,6 +4,7 @@ import "./style.css";
   "use strict";
 
   const time2start = 5000;
+  console.log(`Waiting ${time2start / 1000} seconds to start...`);
   setTimeout(main, time2start);
 })();
 
@@ -67,7 +68,7 @@ function findElements() {
           .childNodes[0].childNodes[0] as HTMLElement;
       }
     } catch (e) {
-      if (e instanceof TypeError) console.warn(e);
+      if (!(e instanceof TypeError)) console.warn(e);
     }
 
     if (!sidebar || !cases) {
@@ -101,7 +102,7 @@ function loop(
       button.innerText = "60";
       refresh.click();
       console.log("refresh");
-      
+
       setTimeout(() => {
         const intialLength = caseSet.size;
 
