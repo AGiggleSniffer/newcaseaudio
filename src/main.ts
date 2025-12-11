@@ -55,7 +55,7 @@ function findElements() {
     const ele = eleStack.pop();
     if (ele == undefined) continue;
     console.log("looping...");
-    console.log(ele);
+    console.log(ele, { sidebar, cases, refresh });
 
     try {
       if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
