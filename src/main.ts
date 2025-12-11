@@ -72,7 +72,10 @@ function findElements() {
         refresh = check?.shadowRoot?.childNodes[0].childNodes[0]
           .childNodes[0].childNodes[0] as HTMLElement;
       }
+
+      console.log("Done Trying");
     } catch (e) {
+      console.log("Error caught...");
       if (!(e instanceof TypeError)) console.warn(e);
     }
 
