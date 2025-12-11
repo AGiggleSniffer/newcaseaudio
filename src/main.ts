@@ -4,7 +4,7 @@ import "./style.css";
   "use strict";
 
   const time2start = 5000;
-  console.log(`Waiting ${time2start / 1000} seconds to start...`);
+  alert(`Waiting ${time2start / 1000} seconds to start...`);
   setTimeout(main, time2start);
 })();
 
