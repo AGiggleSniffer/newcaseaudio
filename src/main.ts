@@ -57,6 +57,7 @@ function findElements() {
     console.log("looping...");
 
     try {
+      console.log("Trying...");
       console.log(ele, { sidebar, cases, refresh });
 
       if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
