@@ -74,6 +74,8 @@ function findElements() {
           "sn-record-list-declarative-actions-wrapper",
         )?.shadowRoot?.childNodes[0];
 
+        console.log("Check Refresh", { check });
+        console.log(check instanceof HTMLElement);
         if (!(check instanceof HTMLElement)) continue;
 
         refresh = check?.shadowRoot?.childNodes[0].childNodes[0]

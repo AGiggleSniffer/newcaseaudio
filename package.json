@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "debug": "tsc && vite build && git add . && git commit -m 'debug build' && git push && echo 'Debug build committed'"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
