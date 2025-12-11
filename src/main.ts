@@ -53,8 +53,8 @@ function findElements() {
   const eleStack: Element[] = [element];
   while (eleStack.length) {
     const ele = eleStack.pop();
-    console.log(ele);
     if (ele == undefined) continue;
+    console.log(ele);
 
     try {
       if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
@@ -73,11 +73,13 @@ function findElements() {
       if (!(e instanceof TypeError)) console.warn(e);
     }
 
-    if (!sidebar || !cases) {
+    if (!sidebar || !cases || !refresh) {
       ele?.shadowRoot?.childNodes.forEach((e) => {
+        console.log(e);
         if (e instanceof HTMLElement) eleStack.push(e);
       });
       ele?.childNodes.forEach((e) => {
+        console.log(e);
         if (e instanceof HTMLElement) eleStack.push(e);
       });
     } else break;
