@@ -52,6 +52,7 @@ function findElements() {
 
   const eleStack: Element[] = [element];
   while (eleStack.length) {
+    console.log("looping...");
     const ele = eleStack.pop();
     if (ele == undefined) continue;
     console.log(ele);
