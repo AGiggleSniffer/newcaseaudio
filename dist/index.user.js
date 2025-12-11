@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         New Case Audio v2.0
+// @name         New Case Audio (test)
 // @tag          audio
 // @namespace    http://tampermonkey.net/
 // @version      2025-11-26
