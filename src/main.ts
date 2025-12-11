@@ -55,9 +55,10 @@ function findElements() {
     const ele = eleStack.pop();
     if (ele == undefined) continue;
     console.log("looping...");
-    console.log(ele, { sidebar, cases, refresh });
 
     try {
+      console.log(ele, { sidebar, cases, refresh });
+
       if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
       if (!cases) cases = ele.querySelector("tbody");
       if (!refresh) {
@@ -73,7 +74,7 @@ function findElements() {
     } catch (e) {
       if (!(e instanceof TypeError)) console.warn(e);
     }
-    
+
     console.log("Check Check", { sidebar, cases, refresh });
     if (!sidebar || !cases || !refresh) {
       console.log("Continuing search...");
