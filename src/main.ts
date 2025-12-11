@@ -74,6 +74,7 @@ function findElements() {
     }
 
     if (!sidebar || !cases || !refresh) {
+      console.log("Continuing search...");
       ele?.shadowRoot?.childNodes.forEach((e) => {
         console.log(e);
         if (e instanceof HTMLElement) eleStack.push(e);
