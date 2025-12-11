@@ -73,7 +73,8 @@ function findElements() {
     } catch (e) {
       if (!(e instanceof TypeError)) console.warn(e);
     }
-
+    
+    console.log("Check Check", { sidebar, cases, refresh });
     if (!sidebar || !cases || !refresh) {
       console.log("Continuing search...");
       ele?.shadowRoot?.childNodes.forEach((e) => {
