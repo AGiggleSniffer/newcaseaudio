@@ -6,7 +6,7 @@ const userscriptMetadata = `\
 // @name         New Case Audio
 // @tag          audio
 // @namespace    http://tampermonkey.net/
-// @version      v2.0.1
+// @version      2.0.2
 // @description  Audio output when a new case is detected
 // @author       Chris
 // @match        https://necam.servicenowservices.com/*

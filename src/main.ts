@@ -60,9 +60,16 @@ function findElements() {
       console.log("Trying...");
       console.log(ele, { sidebar, cases, refresh });
 
-      if (!sidebar) sidebar = ele.querySelector("sn-canvas-toolbar");
-      if (!cases) cases = ele.querySelector("tbody");
+      if (!sidebar) {
+        console.log("Searching for sidebar...");
+        sidebar = ele.querySelector("sn-canvas-toolbar");
+      }
+      if (!cases) {
+        console.log("Searching for cases...");
+        cases = ele.querySelector("tbody");
+      }
       if (!refresh) {
+        console.log("Searching for refresh...");
         const check = ele.querySelector(
           "sn-record-list-declarative-actions-wrapper",
         )?.shadowRoot?.childNodes[0];
