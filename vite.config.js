@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 const userscriptMetadata = `\
 // ==UserScript==
-// @name         New Case Audio (test)
+// @name         New Case Audio
 // @tag          audio
 // @namespace    http://tampermonkey.net/
 // @version      2025-11-26
