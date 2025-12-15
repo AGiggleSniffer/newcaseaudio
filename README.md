@@ -32,6 +32,10 @@ pnpm build
 
 4. Push and merge to main to auto trigger updates for anyone with the script installed.
 
+---
+
+> Note: Unfortuantely it is hard to test out any changes without being logged into Service Now. Best thing you can do is just copy the user.js script from the dist folder and past it into Tampermonkey manually.
+
 ### Dependencies:
 
 - Tailwind CSS
@@ -40,7 +44,7 @@ pnpm build
 
 - Vite
     - Compiler that turns project into raw JS.
-    - Builds one file to not have to worry about imports within Tampermonkey so we can keep clean code to develop. (also needed for Tailwind)
+    - Builds one file to not have to worry about imports within Tampermonkey so we can keep clean code to develop.
 
 - ESLint
     - Linter to find and catch runtime issues before running.

@@ -18,6 +18,7 @@ function main() {
 
 	const newBtn = document.createElement("button");
 	newBtn.innerText = "Start Timer";
+	newBtn.className = "bg-blue mx-auto";
 	(sidebar as HTMLElement).shadowRoot
 		?.querySelector("div.sn-canvas-toolbar-group")
 		?.appendChild(newBtn);
