@@ -38,10 +38,6 @@ pnpm build
 
 ### Dependencies:
 
-- Tailwind CSS
-    - CSS classes that can be compiled in JS without CSS files.
-    - Helps to not have to inject CSS files with tampermonkey and lets us use CSS easier in JS
-
 - Vite
     - Compiler that turns project into raw JS.
     - Builds one file to not have to worry about imports within Tampermonkey so we can keep clean code to develop.
