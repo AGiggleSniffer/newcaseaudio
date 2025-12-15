@@ -19,32 +19,31 @@ const userscriptMetadata = `\
 `;
 
 export default defineConfig({
-    plugins: [
-        tailwindcss(),
-        {
-            name: "userscript-metadata-plugin",
-            // Use the generateBundle hook
-            generateBundle(options, bundle) {
-                for (const fileName in bundle) {
-                    const file = bundle[fileName];
-                    // Ensure we are only modifying the code file, not an asset like a source map
-                    if (file.type === "chunk") {
-                        // Prepend the metadata to the code content
-                        file.code = userscriptMetadata + "\n" + file.code;
-                    }
-                }
-            },
-        },
-    ],
-    build: {
-        rollupOptions: {
-            output: {
-                // Ensure the JS filename always stays the same, ignoring hashing
-                entryFileNames: `[name].user.js`,
-                chunkFileNames: `[name].user.js`,
-                assetFileNames: `[name].[ext]`,
-            },
-        },
-        emptyOutDir: true,
-    },
+	plugins: [
+		tailwindcss(),
+		{
+			name: "userscript-metadata-plugin",
+			generateBundle(options, bundle) {
+				for (const fileName in bundle) {
+					const file = bundle[fileName];
+					// Ensure we are only modifying the code file, not an asset like a source map
+					if (file.type === "chunk") {
+						// Prepend the metadata to the code content
+						file.code = userscriptMetadata + "\n" + file.code;
+					}
+				}
+			},
+		},
+	],
+	build: {
+		rollupOptions: {
+			output: {
+				// Ensure the JS filename always stays the same, ignoring hashing
+				entryFileNames: `[name].user.js`,
+				chunkFileNames: `[name].user.js`,
+				assetFileNames: `[name].[ext]`,
+			},
+		},
+		emptyOutDir: true,
+	},
 });
