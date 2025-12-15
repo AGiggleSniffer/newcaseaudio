@@ -1,6 +1,8 @@
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const userscriptMetadata = `\
 // ==UserScript==
 // @name         New Case Audio
@@ -20,7 +22,6 @@ const userscriptMetadata = `\
 
 export default defineConfig({
 	plugins: [
-		tailwindcss(),
 		{
 			name: "userscript-metadata-plugin",
 			generateBundle(options, bundle) {
@@ -36,6 +37,12 @@ export default defineConfig({
 		},
 	],
 	build: {
+		lib: {
+			entry: resolve(__dirname, "src/main.ts"),
+			name: "NewCaseAudio",
+			// the proper extensions will be added
+			fileName: "new-case-audio",
+		},
 		rollupOptions: {
 			output: {
 				// Ensure the JS filename always stays the same, ignoring hashing
