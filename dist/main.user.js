@@ -2,7 +2,7 @@
 // @name         New Case Audio
 // @tag          audio
 // @namespace    http://tampermonkey.net/
-// @version      2.1.3
+// @version      2.1.4
 // @description  Audio output when a new case is detected
 // @author       Chris
 // @match        https://necam.servicenowservices.com/*
