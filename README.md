@@ -34,7 +34,7 @@ pnpm build
 
 ---
 
-> Note: Unfortuantely it is hard to test out any changes without being logged into Service Now. Best thing you can do is just copy the user.js script from the dist folder and past it into Tampermonkey manually.
+> Note: Unfortuantely it is hard to test out any changes without being logged into Service Now. Best thing you can do is just copy the user.js script from the dist folder and paste it into Tampermonkey manually.
 
 ### Dependencies:
 
