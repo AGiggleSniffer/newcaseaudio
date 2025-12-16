@@ -3,6 +3,9 @@ export const AUDIO_URL =
 
 export const TIME_UNTIL_START = 5000;
 
-export const TIME_UNTIL_SCAN = 60000;
-
 export const TIME_UNTIL_REFRESH = 2000;
+
+let time_until_scan = 60000;
+export const getTimeUntilScan = () => time_until_scan;
+export const setTimeUntilScan = (newTime: number) =>
+	(time_until_scan = newTime);

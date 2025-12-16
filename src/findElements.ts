@@ -30,8 +30,7 @@ export default function findElements() {
 					.childNodes[0].childNodes[0] as HTMLElement;
 			}
 		} catch (e) {
-			if (!(e instanceof TypeError)) console.warn(e);
-			else console.error(e);
+			if (!(e instanceof TypeError)) console.error(e);
 		}
 
 		if (!sidebar || !cases || !refresh) {

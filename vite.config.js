@@ -1,6 +1,7 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
+import packageJson from "./package.json" assert { type: "json" };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const userscriptMetadata = `\
@@ -8,7 +9,7 @@ const userscriptMetadata = `\
 // @name         New Case Audio
 // @tag          audio
 // @namespace    http://tampermonkey.net/
-// @version      2.0.3
+// @version      ${packageJson.version}
 // @description  Audio output when a new case is detected
 // @author       Chris
 // @match        https://necam.servicenowservices.com/*
