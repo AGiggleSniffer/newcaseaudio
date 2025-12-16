@@ -6,7 +6,7 @@ Plays audio when a new case comes in to the unassigned queue.
 
 1. Install Tampermonkey: [Tampermonkey](https://www.tampermonkey.net/index.php)
     - If using Chrome / Edge you will also need to enable permissions for Tampermonkey to run [Permission Guide](https://www.tampermonkey.net/faq.php#Q209)
-2. Visit the raw script JS and tamper monkey will prompt you to install it: [Download](https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/index.user.js)
+2. Visit the raw script JS and tamper monkey will prompt you to install it: [Download](https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/main.user.js)
 3. Favoriting the unassigned cases view in Service Now
 4. After visiting the new favorited view and reloading the page you should see the "Start Timer" button the the left menu bar.
 

@@ -16,8 +16,8 @@ const userscriptMetadata = `\
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=servicenowservices.com
 // @grant        none
 // @run-at       document-end
-// @downloadURL  https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/index.user.js
-// @updateURL    https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/index.user.js
+// @downloadURL  https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/main.user.js
+// @updateURL    https://raw.githubusercontent.com/AGiggleSniffer/newcaseaudio/refs/heads/main/dist/main.user.js
 // ==/UserScript==
 `;
 
