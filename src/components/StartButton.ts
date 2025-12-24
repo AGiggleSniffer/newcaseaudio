@@ -1,4 +1,4 @@
-import { AUDIO_URL, TIME_UNTIL_REFRESH, getTimeUntilScan } from "../config";
+import { AUDIO, TIME_UNTIL_REFRESH, getTimeUntilScan } from "../config";
 
 const StartButton = (
 	refresh: HTMLElement,
@@ -53,8 +53,6 @@ const loop = (
 	timer: HTMLElement,
 	caseSet: Set<string>,
 ) => {
-	const audio = new Audio(AUDIO_URL);
-
 	refresh.click();
 	console.log("refresh");
 	timer.innerText = `${getTimeUntilScan() / 1000}`;
@@ -69,7 +67,7 @@ const loop = (
 			}
 		});
 
-		if (intialLength < caseSet.size) audio.play();
+		if (intialLength < caseSet.size) AUDIO.play();
 
 		console.log(caseSet);
 	}, TIME_UNTIL_REFRESH);
